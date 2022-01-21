@@ -1,0 +1,20 @@
+//Напишите функцию `f`, которая возвращает куб числа.
+//Число передается параметром. Данная функция должна обязательно
+//содержать проверку входного параметра, потому что принимать она
+//может только число.
+//f(2); // 8
+//f('Content'); // Error: parameter type is not a Number
+
+
+
+//решение:
+function f(x) {
+    if (typeof x === 'number') {
+        console.log(x*x*x);
+        return x*x*x;
+    } else {
+        throw new Error('parameter type is not a Number')
+    }
+}
+f(2);
+f('Content');
