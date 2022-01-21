@@ -12,11 +12,16 @@
 function f() {
     var sum = 0;
     for (i of arguments) {
-        sum = sum + i;
-        console.log(i);
+        if (typeof i === 'number') {
+            sum = sum + i;
+        } else {
+            throw new Error('parameter type is not a Number')
+        }
     }
     console.log(sum);
     return sum;
-    
 }
+
 f(1,2,3);
+f(1,1,1,1,1,1,1,1);
+f(1,2,'s',4);
